@@ -1,0 +1,67 @@
+header {
+    position: fixed;
+    background: rgba(1,1,1,0.6);
+    height: 6%;
+    width: 100%;
+    
+    font-size: 1.5em;
+    color: white;
+    
+    display: flex;
+    flex-wrap: no-wrap;
+    justify-content: space-around;
+}
+
+header > div {
+    text-align: justify;
+    margin: auto;
+}
+
+#cart > img {
+    vertical-align: sub;
+}
+
+#header-background {
+    width:100%;
+    height:6%;
+    background-color: #888;
+}
+
+
+html, body {
+    margin: 0;
+    font-family: Gotham Book,"M Hei PRC W45","M Hei HK W42","M Hei HK W40","HelveticaNeue-Regular","Helvetica Neue Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+        
+}
+
+#message{
+    text-align: center;
+    margin-top: 5%;
+    font-family: Tesla,Gotham Book,"M Hei PRC W45","M Hei HK W42","M Hei HK W40","HelveticaNeue-Regular","Helvetica Neue Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size:4vmin;
+    font-size:4vm;
+}
+
+#ret {
+    text-align: center;
+    margin-top: 5%;
+    font-family: Gotham Book,"M Hei PRC W45","M Hei HK W42","M Hei HK W40","HelveticaNeue-Regular","Helvetica Neue Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 2em;
+}
+
+.ligne{
+    margin-left: auto;
+    margin-right: auto;
+	background: transparent;
+	border-color: black;
+	border-width: 0 0 3px;
+	border-style: solid;
+    max-width: 75%;
+}

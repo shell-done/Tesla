@@ -1,0 +1,123 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Tesla - Panier</title>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRCRFEB3KnAZyUfkhqbSUuFsT7oiNWWJY&callback=initMap" async defer></script>
+		<script type="text/javascript" src="script2.js"></script>
+        <link href="style2.css" rel="stylesheet" type="text/css"/>
+        <link rel="shortcut icon" href="data/Mini_tesla_logo.png">
+    </head>
+    <body onload="showCart(); initializeMap(); firstLoadCanvas(); recap();">
+        <header>
+            <div id="connection" onclick="dispConnection()">≡ Connexion</div>
+            <div></div><div></div>
+            <div id="banner"><a href="market.html"><img src="data/banner.png" alt="banner"></a></div>
+            <div></div><div></div>
+            <div id="cart">
+                <div onclick="dispCart()"> Panier <img src="data/cart.png" alt="cart" style="vertical-align:sub;"></div>
+                <div id="cart-div" style="display: none;">
+                    <p>Aucun élément dans le panier.</p>
+                </div>
+            </div>
+        </header>
+        <div id="header-background"></div>
+        <div id="connection-div" style="display: none;">
+            <p>Adresse mail : <br/><input type="text"></p>
+            <p>Mot de passe : <br/><input type="password"></p>
+            <div style="text-align: right;">
+                <button>Se connecter</button>
+            </div>
+        </div>
+        
+        <canvas id="canvForm0" width="1000" height="300"></canvas>
+        <div id="cart-list"></div>
+        
+        <form id='form1'>
+            <canvas id="canvForm1" width="1000" height="300"></canvas>
+            <div class=flexbox2>
+                <div id='infP1'>
+                Nom :<input type='text' name='name' onclick="removeRed(this);" onfocusout="fields1Complete()">
+                Prénom : <input type='text' name='firstname' onclick="removeRed(this);" onfocusout="fields1Complete()">
+                </div>
+                <div id='infP2'>
+                Numéro de portable : <input type='text' name='numP' onclick="removeRed(this);" onfocusout="fields1Complete()">
+                Adresse mail : <input type='text' name='mail' onclick="removeRed(this);" onfocusout="fields1Complete()">
+                </div>
+            </div>
+        </form>
+        
+        <form id='form2'>
+            <canvas id="canvForm2" width="1000" height="300"></canvas>
+            <div class='flexbox3'>
+                <div id='namecard1'>
+                Nom du propriétaire de la carte : <input type='text' name='PropName' onclick="removeRed(this);" onfocusout="fields2Complete()">
+                Prénom du proprétaire de la carte : <input type='text' name='PropFirstname' onclick="removeRed(this);" onfocusout="fields2Complete()">
+                </div>
+                <div id='namecard2'>
+                Numéro de carte : <input type='text' name='bancaire' onclick="removeRed(this);" onfocusout="fields2Complete()">
+                Date d'expiration : <input type='text' name='expiration1' placeholder="MM" onclick="removeRed(this);" onfocusout="fields2Complete()"> / <input type='text' name='expiration2' placeholder="AA" onclick="removeRed(this);" onfocusout="fields2Complete()"><br>
+                Cryptogramme visuel : <input type='text'name='crypto' onclick="removeRed(this);" onfocusout="fields2Complete()">
+                </div>
+            </div>
+        </form>
+        
+        <form id='form3'>
+            <canvas id="canvForm3" width="1000" height="300"></canvas>
+            
+            <div id="detected-address" style="display: none">
+                <p>Nous vous avons détecté à l'addresse : ADD <br/> Voulez vous remplir les champs avec cette addresse ?</p>
+                <button onclick="setToDetectedAddress(); removeDetectedAddress()" type="button">Oui</button>
+                <button onclick="removeDetectedAddress()" type="button">Non</button>
+            </div>
+            
+            <div class="flexbox1">
+                <div id="adress1">
+                Numéro :<br><input type="text" name="num" onclick="removeRed(this);" onfocusout="fields3Complete()"><br>
+                Adresse :<input type="text" name="street" onclick="removeRed(this);" onfocusout="fields3Complete()"><br>
+                Complément :<input type="text" name="complement" onclick="removeRed(this);" onfocusout="fields3Complete()">
+				Code postal :<br><input type="text" name="postalCode" onclick="removeRed(this);" onfocusout="fields3Complete()"><br>
+                </div>
+                <div id="adress2">  
+				    Région :<br><input type="text" name="region" onclick="removeRed(this);" onfocusout="fields3Complete()"><br>
+				    Ville :<br><input type="text" name="city" onclick="removeRed(this);" onfocusout="fields3Complete()"><br>
+                    Pays :<br><select name="country">
+					   <option value="France">France</option>
+					   <option value="Espagne">Espagne</option>
+					   <option value="Allemagne">Allemagne</option>
+					   <option value="Autre">Autre</option>
+                    </select>
+                </div>
+            <div id="map"></div>
+            </div>
+        </form>
+        
+        <canvas id="canvForm4" width="1000" height="300"></canvas>
+        <div class='recap'>
+        <div id='recap1'>
+            <p><br>Nom :<br><br>Prénom :<br><br>Numéro de contact :<br><br>Adresse mail :<br><br>Nom du propriétaire de la carte :<br><br>Prénom du propriétaire de la carte :<br><br>Numéro de la carte :<br><br>Date d'expiration :<br><br>Crypto :<br></p>
+        </div>
+        <div id='recap2'>
+            <p><br>Numéro :<br><br>Adresse :<br><br>Complément :<br><br>Code postal :<br><br>Région :<br><br>Ville :<br><br>Pays :<br></p>
+        </div>
+        </div>
+        <div id="priceTime">
+            <p>Livraison prévue pour le : </p>
+            <p>Prix total : </p>
+        </div>
+        
+        <form>
+        <div class="ligne"></div>
+        <input type="reset" value="Vider les champs" onclick="clearFields()">
+		<input type="button" value="Valider" onclick="Submit()"><br>
+        </form>
+            
+        <footer id="foot">
+			<ul>
+				<li>Projet Web CIR_1 2018 - Pas beaucoup de droits réservés</li>
+				<li>France</li>
+				<li>Contact</li>
+				<li>Mentions légales</li>
+			</ul>
+        </footer>
+    </body>
+</html>

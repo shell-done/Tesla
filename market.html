@@ -1,0 +1,263 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="style1.css" rel="stylesheet" type="text/css">
+        <script src="script1.js" type="text/javascript"></script>
+        <title>Tesla - Magasin</title>
+        <link rel="shortcut icon" href="data/Mini_tesla_logo.png">
+    </head>
+    
+    <body onload="cartNotEmpty();">
+        <header>
+            <div id="connection" onclick="dispConnection()">≡ Connexion</div>
+            <div></div><div></div>
+            <div id="banner"><img src="data/banner.png" alt="banner"></div>
+            <div></div><div></div>
+            <div id="cart">
+                <div onclick="dispCart()"> Panier <img src="data/cart.png" alt="cart" style="vertical-align:sub;"></div>
+                <div id="cart-div" style="display: none;">
+                    <p>Aucun élément dans le panier.</p>
+                </div>
+            </div>
+        </header>
+        <div id="header-background"></div>
+        
+        <div id="connection-div" style="display: none;">
+            <p>Adresse mail : <br/><input type="text"></p>
+            <p>Mot de passe : <br/><input type="password"></p>
+            <div style="text-align: right;">
+                <button>Se connecter</button>
+            </div>
+        </div>
+        
+        <div id="presentation" style="opacity: 1;">
+            <p>Modèles d'exposition</p>
+            <video autoplay loop preload="metadata" src="data/video.mp4"></video>
+            
+            <img src="data/models_background.jpg" width="100%" style="display:none">
+            <div id="presentation-vehicle" style="display: none">
+                <p style="text-align: center; color: white;">Model S</p>
+                <ul>
+                    <li>
+                        <p class="vehicle-prop">2,1s</p>
+                        <p>de 0 à 100 km/h</p>
+                    </li>
+                    <li>
+                        <p class="vehicle-prop">400 km/h</p>
+                        <p>Vitesse maximale</p>
+                    </li>
+                    <li>
+                        <p class="vehicle-prop">1000 km</p>
+                        <p>Autonomie</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="list">
+            <article class="vehicle" onclick="changePresentation(this)">
+                <img src="data/vehicles/models_black.png">
+                <div class="vehicle-title">
+                    <div class="vehicle-name" style="opacity: 1;">Model S</div>
+                    <div onclick="addItemToCart(this)" style="cursor: pointer;">
+                        + <img src="data/cart.png">
+                    </div>
+                </div>
+                <div class="vehicle-info">
+                    <img src="data/75D.png">
+                    <span class="transmission">75 kWh Batterie Transmission Intégrale</span>
+                    <span class="price">93 177 €</span>
+                    <span class="schedule">
+                        <img src="data/schedule.png">
+                        Livraison sous 14 jours
+                    </span>
+                </div>
+                <div class="vehicle-feature">
+                    <div>Caractéristiques :</div>
+                    <ul>
+                        <li>Transmission intégrale dual motor</li>
+                        <li>Toit panoramique</li>
+                        <li>Jantes Slipstream 19"</li>
+                        <li>Sièges en cuir</li>
+                        <li>Suspension standard</li>
+                        <li>Système audio haude fidélité</li>
+                        <li>Pack sécurité</li>
+                    </ul>
+                </div>
+            </article>
+            
+            <article class="vehicle" onclick="changePresentation(this)">
+                <img src="data/vehicles/models_red.png">
+                <div class="vehicle-title">
+                    <div class="vehicle-name">Model S</div>
+                    <div onclick="addItemToCart(this)" style="cursor: pointer;">
+                        + <img src="data/cart.png">
+                    </div>
+                </div>
+                <div class="vehicle-info">
+                    <img src="data/75D.png">
+                    <span class="transmission">75 kWh Batterie Transmission Intégrale</span>
+                    <span class="price">95 380 €</span>
+                    <span class="schedule">
+                        <img src="data/schedule.png">
+                        Livraison sous 14 jours
+                    </span>
+                </div>
+                <div class="vehicle-feature">
+                    <div>Caractéristiques :</div>
+                    <ul>
+                        <li>Transmission intégrale dual motor</li>
+                        <li>Toit panoramique</li>
+                        <li>Jantes Slipstream 19"</li>
+                        <li>Sièges en cuir</li>
+                        <li>Suspension standard</li>
+                        <li>Système audio haude fidélité</li>
+                        <li>Pack sécurité</li>
+                    </ul>
+                </div>
+            </article>
+            
+            <article class="vehicle" onclick="changePresentation(this)">
+                <img src="data/vehicles/models_blue.png">
+                <div class="vehicle-title">
+                    <div class="vehicle-name">Model S</div>
+                    <div onclick="addItemToCart(this)" style="cursor: pointer;">
+                        + <img src="data/cart.png">
+                    </div>
+                </div>
+                <div class="vehicle-info">
+                    <img src="data/P100D.png">
+                    <span class="transmission">100 kWh Batterie Transmission Intégrale</span>
+                    <span class="price">146 330 €</span>
+                    <span class="schedule">
+                        <img src="data/schedule.png">
+                        Livraison sous 14 jours
+                    </span>
+                </div>
+                <div class="vehicle-feature">
+                    <div>Caractéristiques :</div>
+                    <ul>
+                        <li>Transmission intégrale dual motor</li>
+                        <li>Toit ouvrant</li>
+                        <li>Jantes Slipstream 19"</li>
+                        <li>Sièges en cuir</li>
+                        <li>Suspension standard</li>
+                        <li>Système audio haude fidélité</li>
+                        <li>Pack sécurité</li>
+                        <li>Suspension Smart Air</li>
+                        <li>Pilotage automatique amélioré</li>
+                    </ul>
+                </div>
+            </article>
+            
+            <article class="vehicle" onclick="changePresentation(this)">
+                <img src="data/vehicles/modelx_red.png">
+                <div class="vehicle-title">
+                    <div class="vehicle-name">Model X</div>
+                    <div onclick="addItemToCart(this)" style="cursor: pointer;">
+                        + <img src="data/cart.png">
+                    </div>
+                </div>
+                <div class="vehicle-info">
+                    <img src="data/100D.png">
+                    <span class="transmission">90 kWh Batterie Transmission Intégrale</span>
+                    <span class="price">105 071 €</span>
+                    <span class="schedule">
+                        <img src="data/schedule.png">
+                        Livraison sous 14 jours
+                    </span>
+                </div>
+                <div class="vehicle-feature">
+                    <div>Caractéristiques :</div>
+                    <ul>
+                        <li>Transmission intégrale</li>
+                        <li>Toit panoramique</li>
+                        <li>Jantes Slipstream 20"</li>
+                        <li>Sièges ultra blanc</li>
+                        <li>Suspension Smart Air</li>
+                        <li>Système audio haude fidélité</li>
+                        <li>Pack sécurité</li>
+                        <li>Pack climat glacial</li>
+                        <li>Pilotage automatique amélioré</li>
+                    </ul>
+                </div>
+            </article>
+            
+            <article class="vehicle" onclick="changePresentation(this)">
+                <img src="data/vehicles/modelx_blue.png">
+                <div class="vehicle-title">
+                    <div class="vehicle-name">Model X</div>
+                    <div onclick="addItemToCart(this)" style="cursor: pointer;">
+                        + <img src="data/cart.png">
+                    </div>
+                </div>
+                <div class="vehicle-info">
+                    <img src="data/P100D.png">
+                    <span class="transmission">120 kWh Batterie Transmission Intégrale</span>
+                    <span class="price">155 364 €</span>
+                    <span class="schedule">
+                        <img src="data/schedule.png">
+                        Livraison sous 14 jours
+                    </span>
+                </div>
+                <div class="vehicle-feature">
+                    <div>Caractéristiques :</div>
+                    <ul>
+                        <li>Transmission intégrale</li>
+                        <li>Toit panoramique</li>
+                        <li>Jantes Slipstream 20"</li>
+                        <li>Sièges ultra blanc</li>
+                        <li>Suspension Smart Air</li>
+                        <li>Système audio haude fidélité</li>
+                        <li>Pack sécurité</li>
+                        <li>Pack climat glacial</li>
+                        <li>Pilotage automatique amélioré</li>
+                        <li>Batteries améliorées</li>
+                    </ul>
+                </div>
+            </article>
+            
+            <article class="vehicle" onclick="changePresentation(this)">
+                <img src="data/vehicles/modelx_white.png">
+                <div class="vehicle-title">
+                    <div class="vehicle-name">Model X</div>
+                    <div onclick="addItemToCart(this)" style="cursor: pointer;">
+                        + <img src="data/cart.png">
+                    </div>
+                </div>
+                <div class="vehicle-info">
+                    <img src="data/100D.png">
+                    <span class="transmission">90 kWh Batterie Transmission Intégrale</span>
+                    <span class="price">100 231 €</span>
+                    <span class="schedule">
+                        <img src="data/schedule.png">
+                        Livraison sous 14 jours
+                    </span>
+                </div>
+                <div class="vehicle-feature">
+                    <div>Caractéristiques :</div>
+                    <ul>
+                        <li>Transmission intégrale</li>
+                        <li>Toit panoramique</li>
+                        <li>Jantes Slipstream 20"</li>
+                        <li>Sièges ultra blanc</li>
+                        <li>Suspension Smart Air</li>
+                        <li>Système audio haude fidélité</li>
+                        <li>Pack sécurité</li>
+                        <li>Pack climat glacial</li>
+                        <li>Pilotage automatique amélioré</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+        
+        <footer>
+			<ul>
+				<li>Projet Web CIR_1 2018 - Pas beaucoup de droits réservés</li>
+				<li>France</li>
+				<li>Contact</li>
+				<li>Mentions légales</li>
+			</ul>
+        </footer>
+    </body>
+</html>

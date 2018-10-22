@@ -1,0 +1,335 @@
+html, body {
+    font-family: Gotham Book,"M Hei PRC W45","M Hei HK W42","M Hei HK W40","HelveticaNeue-Regular","Helvetica Neue Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+    width: 100%;
+    margin: 0;
+}
+
+legend{
+    margin-top: 5%;
+    margin-left: 20%;
+    font-family: Tesla, Gotham Book,"M Hei PRC W45","M Hei HK W42","M Hei HK W40","HelveticaNeue-Regular","Helvetica Neue Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 1.5em;
+}
+
+#cart-list {
+    margin : 0px 8% 30px 8%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: space-around;
+}
+
+.cart-elementList {
+    width: 20%;
+    height: auto;
+    background-color: #333;
+    overflow: hidden;
+    margin: 30px;
+    margin-top: 0;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.4em;
+    border: 3px solid gray;
+}
+
+.cart-elementList:hover {
+    border: 3px solid #0099ff;
+    cursor: pointer;
+}
+
+.cart-elementList > img {
+    width: 100%;
+    display: block;
+}
+
+.addRemove {
+    height: 24px;
+    margin-left: 5px;
+    vertical-align: top;
+}
+
+canvas {
+    margin: 10px 10% 0 10%;
+    width: 75%;
+    height: 120px;
+}
+
+#img_v1{ 
+    max-height: 150;
+}
+
+.flexbox1, .flexbox2, .flexbox3, .recap{
+    display: flex;
+    margin-bottom: 4%;
+}
+
+#infP1, #namecard1{
+    max-width: 20%;
+    margin-left : 20%;
+    margin-top : 0;
+}
+
+#infP2, #namecard2{
+    max-width: 20%;
+    margin-right: 30%;
+    margin-left: 10%;
+    margin-top: 0;
+}
+
+#recap1{
+    margin-left: 20%;
+}
+
+#recap2{
+    margin-left: 20%;
+}
+
+#recap1 > p, #recap2 > p {
+    margin-top: 0;
+}
+
+#adress1{
+    width : 20%;
+    margin-left: 12%;
+    margin-top: 1%;
+}
+
+#adress2{
+    width : 20%;
+    margin-left : 8%;
+    margin-right: 8%;
+    margin-top : 1%;
+
+}
+
+
+.ligne {
+    background: transparent;
+	border-color: black;
+	border-width: 0 0 3px;
+	border-style: solid;
+    max-width: 75%;
+    margin-left: 10%;
+}
+
+
+form input[type='text'] {
+    height: 3%;
+    width: 100%;
+    outline : none;
+    border : 3px solid black;
+    border-radius: 5px;
+    margin-bottom: 10%;
+}
+
+form input[type='button'], input[type='reset']{
+    outline : none;
+    border-radius: 5px;
+    background : black;
+    font-family: tesla, Gotham Book,"M Hei PRC W45","M Hei HK W42","M Hei HK W40","HelveticaNeue-Regular","Helvetica Neue Regular","Helvetica Neue",Helvetica,Arial,sans-serif;;
+    color : white;
+    height: 4%;
+    width: 15%;
+    position: relative;
+    font-size:1.4em;
+}
+
+form input[type='reset'] {
+    margin-left : 35%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    
+}
+
+form input[name='expiration1'], form input[name='expiration2'], form input[name='crypto'] {
+    height: 3%;
+    width: 10%;
+    outline : none;
+    border : 3px solid black;
+    border-radius: 5px;
+    margin-bottom: 10%;
+}
+
+form select {
+    width : 100%;
+    height: 3%;
+    outline : none;
+    border : 3px solid black;
+    border-radius: 5px;
+    margin-bottom : 7%;
+}
+
+#priceTime {
+    margin-left: 10%;
+    font-size: 2em;
+}
+
+#priceTime > p{
+    margin-top: 0;
+}
+
+#map {
+    width: 500px;
+    height: 400px;
+    background-color: gray;
+    margin-right: 1%;
+    margin-top: 1%;
+}
+
+#detected-address {
+    margin: 15px 10% 0 8%;
+    padding: 10px;
+    
+    width: auto;
+    background-color: lightyellow;
+}
+
+#detected-address > p {
+    margin: 0;
+    padding-bottom: 15px;
+}
+
+#detected-address > button {
+    width: 100px;
+    margin-right: 20px;
+}
+
+
+
+
+
+/* Zone barre du haut */
+header {
+    position: fixed;
+    background: rgba(1,1,1,0.6);
+    height: 6%;
+    width: 100%;
+    
+    font-size: 1.5em;
+    color: white;
+    
+    display: flex;
+    flex-wrap: no-wrap;
+    justify-content: space-around;
+    z-index: 2;
+    
+    border-bottom: 2px solid #111;
+    user-select: none;
+}
+
+header > div {
+    text-align: justify;
+    margin: auto;
+    cursor: pointer;
+}
+
+#header-background {
+    width:100%;
+    height:6%;
+    background-color: #666;
+}
+
+#connection-div {
+    position: fixed;
+    left: 4.5%;
+    
+    width: 400px;
+    height: auto;
+    z-index: 1;
+    top:6%;
+    background-color: rgba(1,1,1,0.6);
+    
+    font-size: 1.5em;
+    color: white;
+    border-radius: 0 0 10% 0;
+}
+
+#connection-div > p {
+    margin: 25px 18px 0 18px;
+}
+
+#connection-div input {
+    width: 100%;
+    height: 30px;
+    margin-top: 5px;
+    font-size: 1em;
+}
+
+#connection-div button {
+    margin: 25px 25px 25px 18px;
+    width: 120px;
+    height: 30px;
+}
+
+#cart-div {
+    position: fixed;
+    right: 4.5%;
+    top:6%;
+    
+    background-color: rgba(1,1,1,0.6);
+    width: 400px;
+    max-height: 60%;
+    overflow-y: auto;
+    
+    text-align: center;
+    border-radius: 0 0 0 10%;
+    color: black;
+    cursor: default;
+}
+
+#cart-div > p {
+    color: white;
+}
+
+.cart-element {
+    width: auto;
+    height: 235px;
+    background-color: #F2F2F2;
+    overflow: hidden;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.cart-element > img {
+    width: 100%;
+    display: block;
+}
+
+#cart > img {
+    vertical-align: sub;
+}
+
+#header-background {
+    width:100%;
+    height:6%;
+    background-color: #888;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.8em;
+    color: gray;
+    
+    margin: 10px;
+}
+
+footer > ul {
+	list-style-type: none;
+}
+
+footer li {
+	display: inline;
+	border-right: 2px solid lightgray;
+    border-left: 2px solid white;
+	padding: 0 10px 0 10px;
+	cursor: pointer;
+}
+
+footer li:last-of-type {
+	border-left: 2px solid white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
